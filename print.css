@@ -1,0 +1,88 @@
+.a4 {
+  --page-width: 297mm;
+  --page-height: 210mm;
+}
+
+.us-letter {
+    --page-width: 279mm;
+    --page-height: 216mm;
+}
+html, body {
+    height: 100%;
+    
+}
+body{
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+   background: black;
+}
+
+main {
+    display: grid;
+    grid-template-areas: 
+        "front back p6 p5"
+        "p1 p2 p3 p4";
+    grid-template-columns: 
+        repeat(4, calc(var(--page-width)/4));
+    grid-template-rows:
+        repeat(2, calc(var(--page-height)/2));
+}
+
+main section {
+    font-size: 4em;
+    display: flex;
+    justify-content: center; /* align horizontal */
+    align-items: center; /* align vertical */
+
+    overflow: hidden;
+}
+
+#front_page {  
+    grid-area: front;
+    background-color: darkmagenta;  
+    transform: rotate(180deg);
+    }
+#page_1 {  
+    grid-area: p1; 
+    background-color: lightgray; 
+    
+    }
+
+#page_2 {  
+    grid-area: p2; 
+     background-color: limegreen; 
+     
+    }
+
+#page_3 {  
+    grid-area: p3; 
+     background-color: beige; 
+    
+    }
+
+#page_4 {  
+    grid-area: p4;
+    background-color: darkred;  
+    }
+
+#page_5 {  
+    grid-area: p5; 
+     background-color: burlywood;  
+     transform: rotate(180deg);
+    }
+
+#page_6 {  
+    grid-area: p6; 
+     background-color: darkorange;  
+     transform: rotate(180deg);
+    }
+
+#back_page {  
+    grid-area: back; 
+     background-color: darkblue; 
+     color: white; 
+     transform: rotate(180deg);
+}
+
+
